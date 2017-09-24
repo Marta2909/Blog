@@ -1,0 +1,7 @@
+<p>zapisz się do newslettera i bądź na bieżąco</p>
+<%= simple_form_for @subscriber do |f| %>
+  <%= f.input :name, label: "imię" %>
+  <%= f.input :city, label: "województwo (opcjonalne)" %>
+  <%= f.input :email, label: "e-mail" %>
+  <%= f.button :submit, "Zapisz się", class: "fbutton" %>
+<% end %>

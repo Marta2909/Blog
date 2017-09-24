@@ -2,19 +2,25 @@
   <div class="container">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link active" href="#">o blogu</a>
+        <%= link_to "o blogu", about_path, class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">kontakt</a>
+        <%= link_to "regulamin", terms_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "kontakt", new_contact_path, class: "nav-link active" %>
       </li>
     </ul>
-    <form class="form-inline" id="myform">
-      <input class="form-control-sm" type="text" placeholder="Szukaj" aria-label="Search">
-      <a href="#" onclick="document.getElementById('myform').submit()"><i class="fa fa-search" aria-hidden="true"></i> </a>
-      <a class="nav-link active" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-      <!--<a class="nav-link active" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a class="nav-link active" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      <a class="nav-link active" href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>-->
+    <form class="form-inline" id="myform", style="align: right">
+      <%= form_tag search_results_path, method: "get" do %>
+        <%= text_field_tag :search_keywords, "", class: 'form-control-sm', placeholder: "Szukaj"  %>
+        <%= button_tag(type: "submit", class:"lupa") do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to "https://www.facebook.com/G%C5%82odna-Chleba-279952855837588/" do %>
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
     </form>
 
   </div>
@@ -33,10 +39,10 @@
         <a><%= link_to "Moje myśli", posts_path, class: "nav-link active" %></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pomódlmy się</a>
+        <%= link_to "Pomódlmy się", intentions_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">W okolicy</a>
+        <%= link_to "W okolicy", news_events_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to root_path do %>
@@ -44,13 +50,13 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Półka</a>
+        <%= link_to "Półka", news_shelf_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Wspólnoty</a>
+        <%= link_to "Wspólnoty", news_ministries_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Świadectwa</a>
+        <%= link_to "Świadectwa", news_testimonies_path, class: "nav-link" %>
       </li>
     </ul>
   </div>

@@ -1,0 +1,24 @@
+<div class="card mb-3">
+  <h3 class="card-show-title">Pomódlmy się wspólnie</h3>
+  <p></p>
+  <p>Zachęcam do wspólnej modlitwy. Modlitwa jest super, bo za jej pomocą możemy porozmawiać z naszym Tatą!</p>
+  <p>On nas kocha, my Go kochamy, a skoro kochamy, to poświęćmy mu swój czas tak jak poświęcamy swój czas ludziom i z Nim porozmawiajmy</p>
+
+  <p>Opowiedzmy Bogu, co u nas słychać. On to wie, bo nas zna, ale ucieszy się, jak Mu o tym powiemy. Każdy lubi być dostrzeżony i potrzebny.
+    Rozmawiajmy z Bogiem codziennie, a również odczujemy, że nie jesteśmy sami, że jest Ktoś, kto kocha, kto wysłucha, przed kim nie musimy niczego ukrywać - Bóg - nasz Tata</p>
+
+  <p>W tym miejscu chciałabym zaproponować Wam wspólną modlitwę w Waszych intencjach. Intencje można dodawać poprzez poniższy formularz.
+  We wszystkich intencjach będziemy się modlić codziennie jedną dzisiątką Różańca i modlitwą "Pod Twoją obronę".
+  Kliknijcie proszę przycisk "pomodliłem się dziś" po zakończonej modlitwie - niech wszyscy wiedzą, że modlimy się wspólnie, to umacnia i motywuje.</p>
+
+  <%= simple_form_for @intention do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Dodaj intencję" %>
+  <% end %>
+
+  <button>Pomodliłam się</button>
+
+  <p>Dziś pomodliło się osób</p>
+  <p>W ostatnim tygodniu pomodliło się osób</p>
+  <p>Od początku istnienia bloga pomodliło się osób</p>
+</div>

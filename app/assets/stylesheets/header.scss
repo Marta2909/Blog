@@ -3,7 +3,12 @@ $grey_font: #5b5b5b;
 $grey_border: #d9d9d9;
 $premium_color: #dea665;
 $premium_font: 'Petit Formal Script', sans-serif;
-$primary_font: 'Pontano Sans', sans-serif;
+$primary_font: 'PT Sans', sans-serif;
+
+.lupa {
+  border: none;
+  background: $white;
+}
 
 .fixed-top {
   background-color: $premium_color;

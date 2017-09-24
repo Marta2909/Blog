@@ -1,0 +1,12 @@
+<div class="card mb-3">
+  <h3 class="card-show-title">Wyniki wyszukiwania dla '<%= params[:search_keywords] %>'</h3>
+  <p></p>
+
+  <% if @found_posts.empty? %>
+    <p>Nie znaleziono</p>
+  <% end %>
+
+  <% @found_posts.each do |f| %>
+    <%= render partial: "postcard", locals: {post: f} %>
+  <% end %>
+</div>

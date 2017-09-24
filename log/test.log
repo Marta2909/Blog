@@ -1,0 +1,1178 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (135.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar, "email" varchar, "body" text, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (99.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar, "body" text, "title" varchar, "note" integer, "image" varchar, "category" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "comments_count" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "subscribers"[0m
+  [1m[35m (121.4ms)[0m  [1m[35mCREATE TABLE "subscribers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "city" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (111.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (65.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170917110725)[0m
+  [1m[35m (98.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170910180819),
+(20170910202340),
+(20170910180933);
+
+[0m
+  [1m[35m (94.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-09-17 18:43:34.858662"], ["updated_at", "2017-09-17 18:43:34.858662"]]
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.7ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:43:35.073468', '2017-09-17 18:43:35.073468', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:43:35.073468', '2017-09-17 18:43:35.073468', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:43:35.078495', '2017-09-17 18:43:35.078495', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:43:35.078495', '2017-09-17 18:43:35.078495', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:43:35.080812', '2017-09-17 18:43:35.080812', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:43:35.080812', '2017-09-17 18:43:35.080812', 298486374)[0m
+  [1m[35m (54.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+SubscribersControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_about
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+StaticControllerTest: test_should_get_contact
+---------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_terms
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_create
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_delete
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_create
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CommentsControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CommentsControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_update
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CommentsControllerTest: test_should_get_destroy
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:44:25.151110', '2017-09-17 18:44:25.151110', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:44:25.151110', '2017-09-17 18:44:25.151110', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:44:25.154952', '2017-09-17 18:44:25.154952', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:44:25.154952', '2017-09-17 18:44:25.154952', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:44:25.158798', '2017-09-17 18:44:25.158798', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:44:25.158798', '2017-09-17 18:44:25.158798', 298486374)[0m
+  [1m[35m (106.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+SubscribersControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_update
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+CommentsControllerTest: test_should_get_create
+----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CommentsControllerTest: test_should_get_destroy
+-----------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CommentsControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CommentsControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_about
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+StaticControllerTest: test_should_get_contact
+---------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_terms
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_create
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_delete
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:48:42.504113', '2017-09-17 18:48:42.504113', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:48:42.504113', '2017-09-17 18:48:42.504113', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:48:42.508707', '2017-09-17 18:48:42.508707', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:48:42.508707', '2017-09-17 18:48:42.508707', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:48:42.511201', '2017-09-17 18:48:42.511201', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:48:42.511201', '2017-09-17 18:48:42.511201', 298486374)[0m
+  [1m[35m (68.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+StaticControllerTest: test_should_get_contact
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_about
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+StaticControllerTest: test_should_get_terms
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+PostsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_create
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PostsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+PostsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PostsControllerTest: test_should_get_delete
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+SubscribersControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:48:54.600206', '2017-09-17 18:48:54.600206', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:48:54.600206', '2017-09-17 18:48:54.600206', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:48:54.603974', '2017-09-17 18:48:54.603974', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:48:54.603974', '2017-09-17 18:48:54.603974', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:48:54.606901', '2017-09-17 18:48:54.606901', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:48:54.606901', '2017-09-17 18:48:54.606901', 298486374)[0m
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:54:52.421691', '2017-09-17 18:54:52.421691', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 18:54:52.421691', '2017-09-17 18:54:52.421691', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:54:52.425218', '2017-09-17 18:54:52.425218', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 18:54:52.425218', '2017-09-17 18:54:52.425218', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:54:52.427691', '2017-09-17 18:54:52.427691', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 18:54:52.427691', '2017-09-17 18:54:52.427691', 298486374)[0m
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+MessageTest: test_should_be_valid_when_all_attributes_are_set
+-------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:03:35.642915', '2017-09-17 19:03:35.642915', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:03:35.642915', '2017-09-17 19:03:35.642915', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:03:35.650685', '2017-09-17 19:03:35.650685', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:03:35.650685', '2017-09-17 19:03:35.650685', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:03:35.654257', '2017-09-17 19:03:35.654257', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:03:35.654257', '2017-09-17 19:03:35.654257', 298486374)[0m
+  [1m[35m (53.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+MessageTest: test_name,_email_and_body_should_not_be_blank
+----------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+MessageTest: test_should_be_valid_when_all_attributes_are_set
+-------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:04:13.223875', '2017-09-17 19:04:13.223875', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:04:13.223875', '2017-09-17 19:04:13.223875', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:04:13.228301', '2017-09-17 19:04:13.228301', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:04:13.228301', '2017-09-17 19:04:13.228301', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:04:13.230771', '2017-09-17 19:04:13.230771', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:04:13.230771', '2017-09-17 19:04:13.230771', 298486374)[0m
+  [1m[35m (70.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+MessageTest: test_responds_to_name,_email_and_body
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+MessageTest: test_should_be_valid_when_all_attributes_are_set
+-------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+MessageTest: test_name,_email_and_body_should_not_be_blank
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:12:19.938042', '2017-09-17 19:12:19.938042', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:12:19.938042', '2017-09-17 19:12:19.938042', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:12:19.941992', '2017-09-17 19:12:19.941992', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:12:19.941992', '2017-09-17 19:12:19.941992', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:12:19.945830', '2017-09-17 19:12:19.945830', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:12:19.945830', '2017-09-17 19:12:19.945830', 298486374)[0m
+  [1m[35m (106.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:13:47.585991', '2017-09-17 19:13:47.585991', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:13:47.585991', '2017-09-17 19:13:47.585991', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:13:47.589847', '2017-09-17 19:13:47.589847', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:13:47.589847', '2017-09-17 19:13:47.589847', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:13:47.592263', '2017-09-17 19:13:47.592263', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:13:47.592263', '2017-09-17 19:13:47.592263', 298486374)[0m
+  [1m[35m (111.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:14:30.094777', '2017-09-17 19:14:30.094777', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:14:30.094777', '2017-09-17 19:14:30.094777', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:14:30.098359', '2017-09-17 19:14:30.098359', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:14:30.098359', '2017-09-17 19:14:30.098359', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:14:30.101072', '2017-09-17 19:14:30.101072', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:14:30.101072', '2017-09-17 19:14:30.101072', 298486374)[0m
+  [1m[35m (106.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:14:30 +0200
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:15:14.950909', '2017-09-17 19:15:14.950909', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:15:14.950909', '2017-09-17 19:15:14.950909', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:15:14.954364', '2017-09-17 19:15:14.954364', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:15:14.954364', '2017-09-17 19:15:14.954364', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:15:14.956735', '2017-09-17 19:15:14.956735', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:15:14.956735', '2017-09-17 19:15:14.956735', 298486374)[0m
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:15:15 +0200
+Processing by MessagesController#new as HTML
+Completed 406 Not Acceptable in 40ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:16:31.718504', '2017-09-17 19:16:31.718504', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:16:31.718504', '2017-09-17 19:16:31.718504', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:16:31.722326', '2017-09-17 19:16:31.722326', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:16:31.722326', '2017-09-17 19:16:31.722326', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:16:31.725751', '2017-09-17 19:16:31.725751', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:16:31.725751', '2017-09-17 19:16:31.725751', 298486374)[0m
+  [1m[35m (106.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:16:31 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (26.5ms)
+Completed 500 Internal Server Error in 4968ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:20:39.611835', '2017-09-17 19:20:39.611835', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:20:39.611835', '2017-09-17 19:20:39.611835', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:20:39.614750', '2017-09-17 19:20:39.614750', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:20:39.614750', '2017-09-17 19:20:39.614750', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:20:39.617354', '2017-09-17 19:20:39.617354', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:20:39.617354', '2017-09-17 19:20:39.617354', 298486374)[0m
+  [1m[35m (88.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:20:39 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (32.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:22:15.183926', '2017-09-17 19:22:15.183926', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:22:15.183926', '2017-09-17 19:22:15.183926', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:22:15.187835', '2017-09-17 19:22:15.187835', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:22:15.187835', '2017-09-17 19:22:15.187835', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:22:15.191054', '2017-09-17 19:22:15.191054', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:22:15.191054', '2017-09-17 19:22:15.191054', 298486374)[0m
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:22:15 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:23:21.068463', '2017-09-17 19:23:21.068463', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:23:21.068463', '2017-09-17 19:23:21.068463', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:23:21.072185', '2017-09-17 19:23:21.072185', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:23:21.072185', '2017-09-17 19:23:21.072185', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:23:21.075881', '2017-09-17 19:23:21.075881', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:23:21.075881', '2017-09-17 19:23:21.075881', 298486374)[0m
+  [1m[35m (65.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:23:21 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_header.html.erb (28.5ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:36:38.662317', '2017-09-17 19:36:38.662317', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:36:38.662317', '2017-09-17 19:36:38.662317', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:36:38.666453', '2017-09-17 19:36:38.666453', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:36:38.666453', '2017-09-17 19:36:38.666453', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:36:38.671049', '2017-09-17 19:36:38.671049', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:36:38.671049', '2017-09-17 19:36:38.671049', 298486374)[0m
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:36:38 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (29.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (3.2ms)
+  Rendered layouts/_sidebar.html.erb (358.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 612ms (Views: 594.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+MessagesControllerTest: test_POST_create
+----------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:36:39 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"ja", "email"=>"ja@example.com", "body"=>"hej"}}
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 39ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:37:09.840256', '2017-09-17 19:37:09.840256', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:37:09.840256', '2017-09-17 19:37:09.840256', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:37:09.844387', '2017-09-17 19:37:09.844387', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:37:09.844387', '2017-09-17 19:37:09.844387', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:37:09.848011', '2017-09-17 19:37:09.848011', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:37:09.848011', '2017-09-17 19:37:09.848011', 298486374)[0m
+  [1m[35m (231.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:37:10 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (3.0ms)
+  Rendered layouts/_sidebar.html.erb (409.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 658ms (Views: 640.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+MessagesControllerTest: test_POST_create
+----------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:37:10 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"ja", "email"=>"ja@example.com", "body"=>"hej"}}
+Redirected to http://www.example.com/contact
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:37:10 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (2.1ms)
+  Rendered layouts/_sidebar.html.erb (346.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 352ms (Views: 350.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:43:07.473605', '2017-09-17 19:43:07.473605', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:43:07.473605', '2017-09-17 19:43:07.473605', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:43:07.478215', '2017-09-17 19:43:07.478215', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:43:07.478215', '2017-09-17 19:43:07.478215', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:43:07.481633', '2017-09-17 19:43:07.481633', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:43:07.481633', '2017-09-17 19:43:07.481633', 298486374)[0m
+  [1m[35m (125.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+MessagesControllerTest: test_POST_create
+----------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:43:07 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"ja", "email"=>"ja@example.com", "body"=>"hej"}}
+Redirected to http://www.example.com/contact
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:43:07 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (2.8ms)
+  Rendered layouts/_sidebar.html.erb (411.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 654ms (Views: 641.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+MessagesControllerTest: test_invalid_POST_create
+------------------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:43:08 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"", "email"=>"", "body"=>""}}
+Redirected to http://www.example.com/contact
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:43:08 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (2.0ms)
+  Rendered layouts/_sidebar.html.erb (379.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 384ms (Views: 382.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:46:33.500474', '2017-09-17 19:46:33.500474', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:46:33.500474', '2017-09-17 19:46:33.500474', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:46:33.504900', '2017-09-17 19:46:33.504900', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:46:33.504900', '2017-09-17 19:46:33.504900', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:46:33.508781', '2017-09-17 19:46:33.508781', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:46:33.508781', '2017-09-17 19:46:33.508781', 298486374)[0m
+  [1m[35m (64.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:46:33 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (29.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (2.8ms)
+  Rendered layouts/_sidebar.html.erb (364.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 608ms (Views: 589.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+MessagesControllerTest: test_invalid_POST_create
+------------------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:46:34 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"", "email"=>"", "body"=>""}}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_sidebar.html.erb (418.6ms)
+Completed 500 Internal Server Error in 424ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+MessagesControllerTest: test_POST_create
+----------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:46:34 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"ja", "email"=>"ja@example.com", "body"=>"hej"}}
+Redirected to http://www.example.com/contact
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:46:34 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (1.9ms)
+  Rendered layouts/_sidebar.html.erb (398.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 403ms (Views: 401.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:49:40.543480', '2017-09-17 19:49:40.543480', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 19:49:40.543480', '2017-09-17 19:49:40.543480', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:49:40.547770', '2017-09-17 19:49:40.547770', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 19:49:40.547770', '2017-09-17 19:49:40.547770', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:49:40.551114', '2017-09-17 19:49:40.551114', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 19:49:40.551114', '2017-09-17 19:49:40.551114', 298486374)[0m
+  [1m[35m (162.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------
+MessagesControllerTest: test_GET_new
+------------------------------------
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:49:40 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (29.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (2.8ms)
+  Rendered layouts/_sidebar.html.erb (380.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 642ms (Views: 624.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+MessagesControllerTest: test_POST_create
+----------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:49:41 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"ja", "email"=>"ja@example.com", "body"=>"hej"}}
+Redirected to http://www.example.com/contact
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/contact" for 127.0.0.1 at 2017-09-17 21:49:41 +0200
+Processing by MessagesController#new as HTML
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  posts.*, count(comments.id) as comment_count FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY comment_count DESC LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  posts.*, max(comments.created_at) as last_commented_at FROM "posts" INNER JOIN "comments" ON "comments"."post_id" = "posts"."id" GROUP BY posts.id ORDER BY last_commented_at DESC LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered subscribers/_subscribers.html.erb (3.9ms)
+  Rendered layouts/_sidebar.html.erb (1368.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 1374ms (Views: 1372.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+MessagesControllerTest: test_invalid_POST_create
+------------------------------------------------
+Started POST "/contact" for 127.0.0.1 at 2017-09-17 21:49:42 +0200
+Processing by MessagesController#create as HTML
+  Parameters: {"message"=>{"name"=>"", "email"=>"", "body"=>""}}
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_sidebar.html.erb (322.0ms)
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:37:41.583813', '2017-09-17 20:37:41.583813', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:37:41.583813', '2017-09-17 20:37:41.583813', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:37:41.586970', '2017-09-17 20:37:41.586970', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:37:41.586970', '2017-09-17 20:37:41.586970', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:37:41.589874', '2017-09-17 20:37:41.589874', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:37:41.589874', '2017-09-17 20:37:41.589874', 298486374)[0m
+  [1m[35m (71.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+MessageMailerTest: test_contact
+-------------------------------
+MessageMailer#contact: processed outbound mail in 0.2ms
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:39:29.902204', '2017-09-17 20:39:29.902204', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:39:29.902204', '2017-09-17 20:39:29.902204', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:39:29.905633', '2017-09-17 20:39:29.905633', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:39:29.905633', '2017-09-17 20:39:29.905633', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:39:29.908190', '2017-09-17 20:39:29.908190', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:39:29.908190', '2017-09-17 20:39:29.908190', 298486374)[0m
+  [1m[35m (92.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+MessageMailerTest: test_contact
+-------------------------------
+  Rendering message_mailer/contact.html.erb within layouts/mailer
+  Rendered message_mailer/contact.html.erb within layouts/mailer (0.9ms)
+  Rendering message_mailer/contact.text.erb within layouts/mailer
+  Rendered message_mailer/contact.text.erb within layouts/mailer (0.2ms)
+MessageMailer#contact: processed outbound mail in 12.9ms
+Sent mail to to@example.org (7.5ms)
+Date: Sun, 17 Sep 2017 22:39:30 +0200
+From: from@example.com
+To: to@example.org
+Message-ID: <59bedd8235875_5dcd2b068bcb8f88213ed@marta-Lenovo-IdeaPad-Y580.mail>
+Subject: Contact
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59bedd823455e_5dcd2b068bcb8f8821249";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59bedd823455e_5dcd2b068bcb8f8821249
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message#contact
+
+Hi, find me in app/views/message_mailer/contact.text.erb
+
+
+----==_mimepart_59bedd823455e_5dcd2b068bcb8f8821249
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Message#contact</h1>
+
+<p>
+  Hi, find me in app/views/message_mailer/contact.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_59bedd823455e_5dcd2b068bcb8f8821249--
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:44:31.505737', '2017-09-17 20:44:31.505737', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:44:31.505737', '2017-09-17 20:44:31.505737', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:44:31.509724', '2017-09-17 20:44:31.509724', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:44:31.509724', '2017-09-17 20:44:31.509724', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:44:31.511838', '2017-09-17 20:44:31.511838', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:44:31.511838', '2017-09-17 20:44:31.511838', 298486374)[0m
+  [1m[35m (383.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+MessageMailerTest: test_contact
+-------------------------------
+  Rendering message_mailer/contact.html.erb within layouts/mailer
+  Rendered message_mailer/contact.html.erb within layouts/mailer (0.8ms)
+  Rendering message_mailer/contact.text.erb within layouts/mailer
+  Rendered message_mailer/contact.text.erb within layouts/mailer (0.2ms)
+MessageMailer#contact: processed outbound mail in 11.8ms
+Sent mail to to@example.org (6.1ms)
+Date: Sun, 17 Sep 2017 22:44:32 +0200
+From: from@example.com
+To: to@example.org
+Message-ID: <59bedeb0225ef_5e942ad830398f90674c5@marta-Lenovo-IdeaPad-Y580.mail>
+Subject: Contact
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59bedeb02157a_5e942ad830398f9067365";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59bedeb02157a_5e942ad830398f9067365
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message#contact
+
+Hi, find me in app/views/message_mailer/contact.text.erb
+
+
+----==_mimepart_59bedeb02157a_5e942ad830398f9067365
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Message#contact</h1>
+
+<p>
+  Hi, find me in app/views/message_mailer/contact.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_59bedeb02157a_5e942ad830398f9067365--
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:45:28.980327', '2017-09-17 20:45:28.980327', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:45:28.980327', '2017-09-17 20:45:28.980327', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:45:28.984193', '2017-09-17 20:45:28.984193', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:45:28.984193', '2017-09-17 20:45:28.984193', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:45:28.986242', '2017-09-17 20:45:28.986242', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:45:28.986242', '2017-09-17 20:45:28.986242', 298486374)[0m
+  [1m[35m (76.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+MessageMailerTest: test_contact
+-------------------------------
+  Rendering message_mailer/contact.html.erb within layouts/mailer
+  Rendered message_mailer/contact.html.erb within layouts/mailer (0.7ms)
+  Rendering message_mailer/contact.text.erb within layouts/mailer
+  Rendered message_mailer/contact.text.erb within layouts/mailer (0.2ms)
+MessageMailer#contact: processed outbound mail in 11.9ms
+Sent mail to to@example.org (6.0ms)
+Date: Sun, 17 Sep 2017 22:45:29 +0200
+From: from@example.com
+To: to@example.org
+Message-ID: <59bedee94de13_5ee22b01390ecf8094848@marta-Lenovo-IdeaPad-Y580.mail>
+Subject: Contact
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59bedee94ceca_5ee22b01390ecf80947c2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59bedee94ceca_5ee22b01390ecf80947c2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message#contact
+
+Hi, find me in app/views/message_mailer/contact.text.erb
+
+
+----==_mimepart_59bedee94ceca_5ee22b01390ecf80947c2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Message#contact</h1>
+
+<p>
+  Hi, find me in app/views/message_mailer/contact.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_59bedee94ceca_5ee22b01390ecf80947c2--
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:46:30.646473', '2017-09-17 20:46:30.646473', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("author", "body", "title", "note", "image", "category", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, 'MyString', 'MyString', '2017-09-17 20:46:30.646473', '2017-09-17 20:46:30.646473', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:46:30.650216', '2017-09-17 20:46:30.650216', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("author", "email", "body", "post_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyText', 1, '2017-09-17 20:46:30.650216', '2017-09-17 20:46:30.650216', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "subscribers"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:46:30.652175', '2017-09-17 20:46:30.652175', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "subscribers" ("name", "email", "city", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2017-09-17 20:46:30.652175', '2017-09-17 20:46:30.652175', 298486374)[0m
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------
+MessageMailerTest: test_contact
+-------------------------------
+  Rendering message_mailer/contact.html.erb within layouts/mailer
+  Rendered message_mailer/contact.html.erb within layouts/mailer (0.7ms)
+  Rendering message_mailer/contact.text.erb within layouts/mailer
+  Rendered message_mailer/contact.text.erb within layouts/mailer (0.2ms)
+MessageMailer#contact: processed outbound mail in 11.9ms
+Sent mail to to@example.org (5.9ms)
+Date: Sun, 17 Sep 2017 22:46:30 +0200
+From: from@example.com
+To: to@example.org
+Message-ID: <59bedf26e4575_5f352ad90915ef7081087@marta-Lenovo-IdeaPad-Y580.mail>
+Subject: Contact
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59bedf26e355a_5f352ad90915ef70809d2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59bedf26e355a_5f352ad90915ef70809d2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Message#contact
+
+Hi, find me in app/views/message_mailer/contact.text.erb
+
+
+----==_mimepart_59bedf26e355a_5f352ad90915ef70809d2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Message#contact</h1>
+
+<p>
+  Hi, find me in app/views/message_mailer/contact.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_59bedf26e355a_5f352ad90915ef70809d2--
+
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

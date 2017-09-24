@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910202340) do
+ActiveRecord::Schema.define(version: 20170924114540) do
 
   create_table "comments", force: :cascade do |t|
     t.string "author"
     t.string "email"
     t.text "body"
     t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "intentions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ministries", force: :cascade do |t|
+    t.string "city"
+    t.string "parish"
+    t.string "name"
+    t.string "page"
+    t.string "meeting_day"
+    t.string "meeting_time"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +49,20 @@ ActiveRecord::Schema.define(version: 20170910202340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "comments_count"
+  end
+
+  create_table "prayers", force: :cascade do |t|
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -6,7 +6,7 @@
 <% if post.updated_at != post.created_at %>
   <p class="card-text-footer"><small class="text-muted">Ostatnio aktualizowano <%= format_date post.created_at %></small></p>
 <% end %>
-<p class="card-text-footer"><small class="text-muted">Dodano <%= format_date post.created_at %>, <%= render partial: "comments_count", locals: {pp: post} %></small></p>
+<p class="card-text-footer"><small class="text-muted">Dodano <%= format_date post.created_at %>, <%= render partial: "posts/comments_count", locals: {pp: post} %></small></p>
 
 <% if post.image.present? %>
   <%= image_tag post.image, class: "card-img-top", alt: "Card image cap", width: "max-width", height: "500px" %>

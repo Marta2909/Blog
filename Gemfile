@@ -36,7 +36,10 @@ gem "font-awesome-rails"
 gem 'kaminari'
 gem 'mechanize'
 gem 'simple_form'
-
+gem 'validates_email_format_of'
+gem 'figaro'
+gem 'mail_form'
+gem "letter_opener", :group => :development
 
 gem "simple_calendar", "~> 2.0"
 # Use Capistrano for deployment

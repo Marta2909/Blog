@@ -1,0 +1,34 @@
+<div class="card mb-3">
+  <h3 class="card-show-title">Pomódlmy się wspólnie</h3>
+  <p></p>
+  <p>Zachęcam do wspólnej modlitwy. Modlitwa jest super, bo za jej pomocą możemy porozmawiać z naszym Tatą!</p>
+  <p>On nas kocha i my Go kochamy, a skoro Go kochamy, to poświęćmy Mu swój czas tak jak poświęcamy swój czas ludziom i z Nim porozmawiajmy.</p>
+
+  <p>Opowiedzmy Bogu, co u nas słychać. On to wie, bo nas zna, ale ucieszy się, jak Mu o tym powiemy. Każdy lubi być dostrzeżony i potrzebny.
+    Rozmawiajmy z Bogiem codziennie, a również odczujemy, że nie jesteśmy sami, że jest Ktoś, kto kocha, kto wysłucha, przed kim nie musimy niczego ukrywać - Bóg - nasz Tata</p>
+
+  <p>W tym miejscu chciałabym zaproponować Wam wspólną modlitwę w Waszych intencjach. Intencje można dodawać poprzez poniższy formularz.
+  We wszystkich intencjach będziemy się modlić codziennie jedną dzisiątką Różańca i modlitwą "Pod Twoją obronę".
+  Kliknijcie proszę przycisk "pomodliłem się dziś" po zakończonej modlitwie - niech wszyscy wiedzą, że modlimy się wspólnie, bo to umacnia i motywuje.</p>
+
+  <div class="row">
+    <div class="col-7">
+      <p>Modlimy się w intencjach:</p>
+      <ul>
+        <% @intentions.each do |i| %>
+          <li><%= i.name %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-4">
+      <%= render "new", template: "intentions/new" %>
+      <br>
+      <%= link_to "Pomodliłem/am się dziś", count_path, class: "fbutton", :remote => true  %>
+        <p>Od początku istnienia bloga pomodliło się <%= @new_count %> osób</p>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+
+
+</div>

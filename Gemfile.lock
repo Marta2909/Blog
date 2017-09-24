@@ -73,6 +73,8 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
@@ -99,6 +101,8 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.8.0)
@@ -106,6 +110,8 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -114,6 +120,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    mail_form (1.7.0)
+      actionmailer (>= 3.2, < 5.2)
+      activemodel (>= 3.2, < 5.2)
     mechanize (2.7.5)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -222,6 +231,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
+    validates_email_format_of (1.6.3)
+      i18n
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -242,11 +253,14 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  figaro
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  letter_opener
   listen (>= 3.0.5, < 3.2)
+  mail_form
   mechanize
   puma (~> 3.7)
   rails (~> 5.1.3)
@@ -261,6 +275,7 @@ DEPENDENCIES
   twitter-bootstrap-rails
   tzinfo-data
   uglifier (>= 1.3.0)
+  validates_email_format_of
   web-console (>= 3.3.0)
 
 BUNDLED WITH

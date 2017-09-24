@@ -37,7 +37,7 @@
   </div>
   <div class="fb-page"
     style="width: 100%;"
-    data-href="https://www.facebook.com/imdb"
+    data-href="https://www.facebook.com/G%C5%82odna-Chleba-279952855837588/"
     data-width="440"
     data-hide-cover="false"
     data-show-facepile="true"></div>
@@ -46,12 +46,6 @@
 
 <div class="card">
   <h3 class="card-title-sidebar">newsletter</h3>
-  <p>zapisz się do newslettera i bądź na bieżąco</p>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">@</span>
-    <input type="text" class="form-control" placeholder="podaj swój e-mail" aria-label="e-mail" aria-describedby="basic-addon1"></input>
-  </div>
-  <div class="card-body">
-    <%= link_to "Zapisz się", root_path, class: "button" %>
-  </div>
+
+  <%= render partial: "subscribers/subscribers" %>
 </div>

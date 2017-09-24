@@ -1,0 +1,22 @@
+<div class="card mb-3">
+  <h3 class="card-show-title">Napisz do mnie</h3>
+  <p></p>
+
+  <p>Zapraszam do kontaktu. Poprzez poniższy formularz możecie proponować tematy, które Was interesują, zgłaszać książki, filmy, wydarzenia lub wspólnoty,
+    które znacie, dzielić się świadectwami, jak również napisać do mnie, o czym tylko chcecie: może macie jakąś wątpliwość, może tak po prostu chcecie porozmawiać,
+    czymś się podzielić. Czekam na Wasze maile :)</p>
+  <p></p>
+  <% if flash[:notice].present? %>
+    <p><%= flash[:notice] %></p>
+  <% else %>
+    <%= simple_form_for @contact do |f| %>
+      <%= f.input :name, label: "Imię", placeholder: "ja jestem Marta, będę wdzięczna za Twoje prawdziwe imię", error: "pole wymagane" %>
+      <%= f.input :email, label: "e-mail", placeholder: "ja@przykladowy.pl", error: "pole wymagane" %>
+      <%= f.input :category, label: "temat", prompt: "wybierz", error: "pole wymagane",  collection: ["propozycja tematu do poruszenia na blogu", "zgłoszenie wydarzenia chrześcijańskiego", "zgłoszenie książki / filmu chrześcijańskiego", "zgłoszenie wspólnoty", "świadectwo", "problem techniczny", "inna wiadomość"] %>
+      <%= f.input :body, label: "treść", as: :text, error: "pole wymagane" %>
+      <div class="card-body">
+        <%= f.submit "Wyślij", class: "button" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<%= simple_form_for @intention do |f| %>
+  <%= f.input :name, label: "Wpisz swoją intencję" %>
+  <%= f.button :submit, "Dodaj intencję", class: "fbutton" %>
+<% end %>
+
+<% if flash[:notice].present? %>
+  <p><%= flash[:notice] %></p>
+<% end %>

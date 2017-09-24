@@ -17,6 +17,10 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//modal with notices and flash messages
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
 
 //Main navigation scroll spy for shadow
 $(window).scroll(function() {
